@@ -13,5 +13,3 @@ export default class User implements UserObjIf {
 }
 
 const usObj: UserObjIf = new User('James', 'Bond', true);
-
-const num: number = 5;
