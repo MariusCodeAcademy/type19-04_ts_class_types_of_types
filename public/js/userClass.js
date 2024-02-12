@@ -10,3 +10,4 @@ class User {
 User.count = 0;
 export default User;
 const usObj = new User('James', 'Bond', true);
+const num = 5;

@@ -1,4 +1,9 @@
-export default class User {
+interface UserObjIf {
+  name: string;
+  lastName: string;
+  isDriver: boolean;
+}
+export default class User implements UserObjIf {
   private id: number;
   private static count = 0;
   constructor(public name: string, public lastName: string, public isDriver: boolean) {
@@ -7,4 +12,6 @@ export default class User {
   }
 }
 
-const usObj = new User('James', 'Bond', true);
+const usObj: UserObjIf = new User('James', 'Bond', true);
+
+const num: number = 5;
