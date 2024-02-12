@@ -1,5 +1,8 @@
 // nusitaikyti i elementus
 
+const num1El = document.getElementById('num1') as HTMLInputElement | null;
+const num2El = <HTMLInputElement | null>document.getElementById('num1');
+const selectEl = document.getElementById('action') as HTMLSelectElement | null;
 // formai uzdeti event listeneri
 
 // pateikiant forma paimti skaitiniu inputu reiksmes
