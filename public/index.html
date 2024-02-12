@@ -12,17 +12,23 @@
   <h1>Class types of types</h1>
 
   <form>
-    <input type="number" id="num1" placeholder="num1">
-    <select name="action" id="action">
+    <input type="number" id="num1" placeholder="num1" required>
+    <select name="action" id="action" required>
       <option value="+">plus</option>
       <option value="-">minus</option>
       <option value="*">mulitply</option>
     </select>
-    <input type="number" id="num2" placeholder="num2">
+    <input type="number" id="num2" placeholder="num2" required>
     <button type="submit">Calculate</button>
   </form>
 
   <p id="result-p">10</p>
+
+  <ul id="history">
+    <li>10</li>
+    <li>15</li>
+    <li>-5</li>
+  </ul>
 
 </body>
 

@@ -12,11 +12,38 @@ const els: ElementsIf = {
 };
 
 const formEl = document.forms[0] as HTMLFormElement | null;
+const resulP = document.getElementById('result-p') as HTMLParagraphElement | null;
 const num1El = document.getElementById('num1') as HTMLInputElement | null;
 const num2El = <HTMLInputElement | null>document.getElementById('num2');
 const selectEl = document.getElementById('action') as HTMLSelectElement | null;
 
 // formai uzdeti event listeneri
+
+formEl?.addEventListener('submit', makeCalucalion);
+
+function makeCalucalion(event: SubmitEvent): void {
+  event.preventDefault();
+  if (!num1El || !num2El || !selectEl) return;
+  const val1: number = num1El.valueAsNumber;
+  const val2: number = num2El.valueAsNumber;
+  const selElVal = selectEl.value as CalcActions;
+
+  console.log(val1, selElVal, val2);
+  const rez = calculate(val1, val2, selElVal);
+  console.log('rez ===', rez);
+
+  if (!resulP) return console.warn('nera p el');
+  // irasyti i resulP rez reiksme
+  resulP.textContent = rez.toString();
+
+  // addToHistory(rez);
+}
+
+// function addToHistory(value) {
+// sukurti nauja li el,
+// prides i ji reiksme value
+// patalpins ta el i ul
+// }
 
 // pateikiant forma paimti skaitiniu inputu reiksmes
 // paimti selecto reiksme
@@ -25,10 +52,10 @@ const selectEl = document.getElementById('action') as HTMLSelectElement | null;
 // 2. sukurti enum CalcActions kuris gali but plus, minus, divide, multiply
 
 const enum CalcActions {
-  plus,
-  minus,
-  divide,
-  multiply,
+  plus = '+',
+  minus = '-',
+  divide = '/',
+  multiply = '*',
 }
 // 2.1 sukurti skaiciuotuva kuris priima 2 skaicius ir veiksma ir grazina rezultata
 
