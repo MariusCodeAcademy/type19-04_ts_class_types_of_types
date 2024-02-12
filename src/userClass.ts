@@ -1,10 +1,10 @@
 export default class User {
   private id: number;
-  public count = 0;
+  private static count = 0;
   constructor(public name: string, public lastName: string, public isDriver: boolean) {
-    this.count++;
-    this.id = this.count;
+    User.count++;
+    this.id = User.count;
   }
 }
 
-// const usObj = new User('James', 'Bond', true);
+const usObj = new User('James', 'Bond', true);
