@@ -1,8 +1,21 @@
+interface ElementsIf {
+  num1: HTMLInputElement | null;
+  num2: HTMLInputElement | null;
+  select: HTMLSelectElement | null;
+}
 // nusitaikyti i elementus
 
+const els: ElementsIf = {
+  num1: document.getElementById('num1') as HTMLInputElement | null,
+  num2: document.getElementById('num2') as HTMLInputElement | null,
+  select: document.getElementById('action') as HTMLSelectElement | null,
+};
+
+const formEl = document.forms[0] as HTMLFormElement | null;
 const num1El = document.getElementById('num1') as HTMLInputElement | null;
-const num2El = <HTMLInputElement | null>document.getElementById('num1');
+const num2El = <HTMLInputElement | null>document.getElementById('num2');
 const selectEl = document.getElementById('action') as HTMLSelectElement | null;
+
 // formai uzdeti event listeneri
 
 // pateikiant forma paimti skaitiniu inputu reiksmes
