@@ -1,16 +1,10 @@
-// 1. sukurti enmu kuriame galimos reiksme yra baltijos salys
+// nusitaikyti i elementus
 
-const enum BaltStates {
-  lt = 'Lietuva',
-  lv = 'Latvija',
-  est = 'Estija',
-}
+// formai uzdeti event listeneri
 
-const salisString: string = `as gyvenu ${BaltStates.lt}`;
-// console.log('salisString ===', salisString);
-// sukutri kintamaji kuriame bus stringas ir jo reiksme
-
-// as gyvenu [baltijos salis is enum]
+// pateikiant forma paimti skaitiniu inputu reiksmes
+// paimti selecto reiksme
+//  atlikti veiksma  su calculate()
 
 // 2. sukurti enum CalcActions kuris gali but plus, minus, divide, multiply
 
@@ -49,5 +43,5 @@ function calculate(num1: number, num2: number, action: CalcActions): number {
 
   return rez;
 }
-const m1 = calculate(5, 10, CalcActions.multiply);
-console.log('m1 ===', m1);
+
+export {};

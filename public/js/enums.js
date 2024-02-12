@@ -4,13 +4,25 @@ const salisString = `as gyvenu ${"Lietuva" /* BaltStates.lt */}`;
 // 2.1 sukurti skaiciuotuva kuris priima 2 skaicius ir veiksma ir grazina rezultata
 function calculate(num1, num2, action) {
     // apskaiciavimas
-    if (action === 0 /* CalcActions.plus */) {
-        const rez = num1 + num2;
-        console.log('rez ===', rez);
+    let rez;
+    switch (action) {
+        case 0 /* CalcActions.plus */:
+            rez = num1 + num2;
+            break;
+        case 1 /* CalcActions.minus */:
+            rez = num1 - num2;
+            break;
+        case 2 /* CalcActions.divide */:
+            rez = num1 / num2;
+            break;
+        case 3 /* CalcActions.multiply */:
+            rez = num1 * num2;
+            break;
+        default:
+            console.warn('No action found');
+            rez = 0;
     }
-    else if (action === 1 /* CalcActions.minus */) {
-        const rez = num1 - num2;
-        console.log('rez ===', rez);
-    }
+    return rez;
 }
-calculate(5, 10, 1 /* CalcActions.minus */);
+const m1 = calculate(5, 10, 3 /* CalcActions.multiply */);
+console.log('m1 ===', m1);
