@@ -59,11 +59,11 @@ const addr1: Address = {
   houseNr: 15,
   town: 'Kaunas',
 };
-const addr2: AddressWithPostCode = {
-  street: 'Vytauto',
-  houseNr: 15,
-  town: 'Kaunas',
-};
+// const addr2: AddressWithPostCode = {
+//   street: 'Vytauto',
+//   houseNr: 15,
+//   town: 'Kaunas',
+// };
 
 interface UserFull {
   id: number;
@@ -80,7 +80,7 @@ interface UserFull {
       lng: number;
     };
   };
-  phone: string;
+  phone: number;
   website: string;
   company?: {
     name: string;
@@ -88,3 +88,14 @@ interface UserFull {
     bs: string;
   };
 }
+
+// sukurti tipa kuriame butu UserFull interface name, email, phone, website
+
+type UserInfo = Pick<UserFull, 'name' | 'email' | 'phone' | 'website'>;
+
+const uob1: UserInfo = {
+  email: 'e@e.com',
+  name: 'Eny',
+  phone: 370,
+  website: 'e.com',
+};
